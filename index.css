@@ -1,0 +1,97 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.navbar{
+    height: 100px;
+    background: linear-gradient(rgb(6, 6, 24),rgb(14, 7, 54));
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    float: left;
+    border-bottom: white solid 5px;
+    position: fixed;
+}
+
+.imagem{
+    background-image: url(esportes.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+        height: 600px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+}
+.imagem .escrita {
+    color: white;
+    width: 550px;
+    font-weight: bolder;
+    margin-left: -300px;
+    font-size: 26px;
+    padding-top: 170px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.navbar .home{
+    width: 100px;
+    height: 100%;
+    margin-left: 350px;
+    text-align: center;
+}
+.navbar .simulador{
+    width: 100px;
+    height: 100%;
+    margin-right: 50px;
+    text-align: center;
+
+}
+.navbar .login{
+    width: 100px;
+    height: 100%;
+    margin-left: 50px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+
+}
+.navbar .cadastro{
+    width: 100px;
+    height: 100%;
+    margin-right: 350px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+.navbar a{
+    color: white;
+    position: relative;
+    top: 35px;
+    text-decoration: none;
+    font-size: 20px;
+}
+.navbar .home:hover{
+    /* background: linear-gradient(rgb(80, 80, 82),rgb(145, 144, 144)); */
+    background: linear-gradient(blue, white);
+    transition: 0.75s;
+    animation: colors 3s;
+    box-shadow: black 2px 2px 2px;
+}
+.navbar .simulador:hover{
+    background: linear-gradient(rgb(31, 211, 31), white);
+    transition: 0.75s;
+    animation: colors 3s;
+    box-shadow: black 2px 2px 2px;
+}
+.navbar .login:hover{
+    background: linear-gradient(blue, white);
+    transition: 0.75s;
+    animation: colors 3s;
+    box-shadow: black 2px 2px 2px;
+}
+.navbar .cadastro:hover{
+    background: linear-gradient(rgb(31, 211, 31), white);
+    transition: 0.75s;
+    animation: colors 3s;
+    box-shadow: black 2px 2px 2px;
+}
