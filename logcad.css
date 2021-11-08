@@ -113,10 +113,66 @@ a{
     font-weight: bolder;
 }
 .login_usu{
-    background-color: blue;
-    width: 450px;
-    height: 450px;
+    background: linear-gradient(rgb(6, 6, 24),rgb(19, 10, 73));
+    width: 400px;
+    height: 350px;
     margin-top: 100px;
     box-shadow: black 7px 7px 7px;
     border: black solid 2px;
+    text-align: center;
+    color: white;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.login_usu h2{
+    padding-top: 18px;
+}
+.login_usu h3{
+    padding-top: 28px;
+}
+.login_usu input{
+    padding: 6px;
+    margin: 10px;
+    border-radius: 10px;
+    text-align: center;
+    border: black 3px solid;
+}
+.login_usu button{
+    padding: 5px;
+    border-radius: 10px;
+    width: 90px;
+    height: 30px;
+    color: white;
+    background-color: black;
+}
+.cadastro_usu{
+    background: linear-gradient(rgb(6, 6, 24),rgb(19, 10, 73));
+    width: 400px;
+    height: 500px;
+    margin-top: 90px;
+    box-shadow: black 7px 7px 7px;
+    border: black solid 2px;
+    text-align: center;
+    color: white;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.cadastro_usu h2{
+    padding-top: 10px;
+}
+.cadastro_usu h3{
+    padding-top: 10px;
+}
+.cadastro_usu input{
+    padding: 6px;
+    margin: 10px;
+    border-radius: 10px;
+    text-align: center;
+    border: black 3px solid;
+}
+.cadastro_usu button{
+    padding: 5px;
+    border-radius: 10px;
+    width: 90px;
+    height: 30px;
+    color: white;
+    background-color: black;
 }
