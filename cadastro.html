@@ -21,10 +21,13 @@
             <h2>Cadastre-se em nosso site!</h2>
             <h3>Insira seu Nome:</h3><input id="nome_cad" placeholder="Digite seu nome" type="text">
             <h3>Insira seu Apelido:</h3><input id="apelido_cad" placeholder="Digite seu apelido" type="text">
-            <h3>Insira sua Senha:</h3><input id="senha_cad" placeholder="Digite sua senha" type="password">
+            <h3>Insira sua Senha:</h3>
+            <input id="senha_cad" placeholder="Digite sua senha" type="password" onkeyup="calcularforca()">
+            <img id="olho" onclick="mostrarsenha()" src="https://icon-library.com/images/show-password-icon/show-password-icon-18.jpg" height="20px">
+            <div id="forca_senha"></div>
             <h3>Insira seu CPF:</h3><input id="cpf_cad" placeholder="Digite seu CPF" type="text">
             <h3>Insira seu E-mail:</h3><input id="email_cad" placeholder="Digite seu E-mail" type="email"><br>
-            <button>Cadastrar</button>
+            <button onclick="cadastrar()">Cadastrar</button>
         </div>
     </div>
     <div class="footer">
@@ -34,3 +37,68 @@
     </div>
 </body>
 </html>
+<script>
+    function calcularforca() {
+        let senha = senha_cad.value;
+
+        if (senha == "") {
+            forca_senha.innerHTML = ""
+        } else if (senha.length <= 3) {
+            forca_senha.style.color = "red"
+            forca_senha.innerHTML = "Senha fraca!"
+        } else if (senha.length <= 6) {
+            forca_senha.style.color = "yellow"
+            forca_senha.innerHTML = "Senha média!"
+        } else {
+            forca_senha.style.color = "blue"
+            forca_senha.innerHTML = "Senha forte!"
+        }
+    }
+    function cadastrar() {
+        let nome = nome_cad.value;
+        let apelido = apelido_cad.value;
+        let senhaCadastro = senha_cad.value;
+        let cpf = cpf_cad.value;
+        let email = email_cad.value;
+
+        let nomeValido = nome.length > 3;
+        let emailValido = email.includes("@") && email.includes(".com");
+        let apelidoInvalido = apelido.includes(" ");
+        let senhaValida = isNaN(senhaCadastro);
+        let tamanhoSenha = senhaCadastro.length >= 7;
+        let cpfValido = cpf.length == 11;
+
+        if (nome == "" || email == "" || senhaCadastro == "" || apelido == "" || cpf == "") {
+            alert("Preencha todos os campos!")
+        } else if (!nomeValido) {
+            alert("Seu nome deve conter mais de três letras!")
+        } else if (apelidoInvalido) {
+            alert("Seu username não deve conter espaços!")
+        } else if (!senhaValida) {
+            alert("Inclua pelo menos uma letra na sua senha!")
+        } else if (!tamanhoSenha) {
+            alert("Crie uma senha forte!")
+        } else if (!cpfValido || isNaN(cpf)) {
+            alert("Seu CPF deve contar 11 caracteres, e deve inserir apenas números!") 
+        } else if (!emailValido) {
+            alert("Insira um email válido (deve conter @ e .com)!")
+        } else {
+            alert("Cadastro concluído com sucesso!")
+            nome_cad.value = "";
+            apelido_cad.value = "";
+            senha_cad.value = "";
+            cpf_cad.value = "";
+            email_cad.value = "";
+            forca_senha.innerHTML = ""
+        }
+        
+    }
+    function mostrarsenha() {
+        if (senha_cad.type == "password") {
+            senha_cad.type = "text"
+            olho.src = "https://icon-library.com/images/show-password-icon/show-password-icon-18.jpg"} 
+        else {
+            senha_cad.type = "password"
+            olho.src = "https://icon-library.com/images/show-password-icon/show-password-icon-17.jpg"}
+    }
+</script>
