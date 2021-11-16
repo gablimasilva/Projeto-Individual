@@ -1,0 +1,143 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Cadastro / Esportes</title>
+
+    
+    <script src="./assets/js/funcoes.js"></script>
+    
+    
+    <link rel="stylesheet" href="index.css">
+    <link rel="icon" href="https://cdn-0.imagensemoldes.com.br/wp-content/uploads/2021/03/Ping-Pong-PNG-1024x1024.png">
+</head>
+
+<body>
+    <div class="navbar">
+        <div class="home"><a href="index.html">Home</a></div>
+        <div class="simulador"><a href="herois.html">Heróis</a></div>
+        <div class="bola"><a href="">⚽🏀🥊</a></div>
+        <div class="login"><a href="login.html">Login</a></div>
+        <div class="cadastro"><a href="cadastro.html" class="active">Cadastro</a></div>
+    </div>
+    <div class="imagem ">
+        <div class="cadastro_usu ">
+                <h2>Seja bem-vindo!</h2><br><br>
+                    <form id="form_cadastro" method="post" onsubmit="return cadastrar()">
+                        Nome:<br>
+                        <input name="nome" type="text" placeholder="Digite seu nome">
+                        <br>
+                        E-mail:<br>
+                        <input name="email" type="text" placeholder="meuemail@provedor.com">
+                        <br>
+                        Senha:<br>
+                        <input name="senha" id="senha_cad" type="password" placeholder="Digite sua melhor senha"> <img id="olho" onclick="mostrarsenha()" src="https://icon-library.com/images/show-password-icon/show-password-icon-18.jpg" height="20px">
+                        <br>
+                        Confirmação da Senha:<br>
+                        <input name="confirmacao-senha" type="password" placeholder="Confirme sua senha">
+                        <br><br>
+                        <button class="btn" style="cursor: pointer;" id="botao_">Cadastrar</button>
+                    </form>
+                <div id="div_aguardar" class="loading-div">
+                    <img src="./assets/circle-loading.gif" id="loading-gif" style="display: none;">
+                </div>
+                <div id="div_erros_login">
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="container">
+            Site desenvolvido por Gabriel Lima da Silva<br>
+            RA: 01212152<br>
+            Bandtec Digital School
+        </div>
+    </div>
+</body>
+
+</html>
+
+<script>
+    function mostrarsenha() {
+        if (senha_cad.type == "password") {
+            senha_cad.type = "text"
+            olho.src = "https://icon-library.com/images/show-password-icon/show-password-icon-17.jpg"}
+            else {
+                senha_cad.type = "password"
+                olho.src = "https://icon-library.com/images/show-password-icon/show-password-icon-18.jpg"} 
+            }
+
+    function limparFormulario() {
+        document.getElementById("form_cadastro").reset();
+    }
+
+    function cadastrar() {
+        aguardar();
+
+        var formulario = new URLSearchParams(new FormData(document.getElementById("form_cadastro")));
+
+        var nome = formulario.get("nome");
+        var email = formulario.get("email");
+        var senha = formulario.get("senha");
+        var confirmacaoSenha = formulario.get("confirmacao-senha");
+
+        // TODO: VERIFICAR AS VALIDAÇÕES QUE ELES ESTÃO APRENDENDO EM ALGORITMOS 
+        if (nome == "" || email == "" || senha == "" || confirmacaoSenha == "") {
+            
+            window.alert("Preencha todos os campos para prosseguir!");
+            if (nome == "")  {
+                console.log('nome está em branco')
+            }
+            if (email == "" )  {
+                console.log('email está em branco')
+            }
+            if (senha == "" )  {
+                console.log('senha está em branco')
+            }
+            if (confirmacaoSenha == "" )  {
+                console.log('confirmacaoSenha está em branco')
+            }
+            finalizarAguardar();
+            return false;
+        }
+        
+        if (email.indexOf("@") == -1 || email.indexOf(".com") == -1) {
+            window.alert("Ops, e-mail inválido! Verifique e tente novamente.");
+            finalizarAguardar();
+            return false;
+        }
+        
+        if (senha != confirmacaoSenha) {
+            window.alert("As senhas inseridas devem ser iguais para prosseguir!");
+            finalizarAguardar();
+            return false;
+        }
+
+        fetch("/usuarios/cadastrar", {
+            method: "POST",
+            body: formulario
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+                window.alert("Cadastro realizado com sucesso!");
+                window.location = "login.html";
+                limparFormulario();
+                finalizarAguardar();
+            } else {
+                throw("Houve um erro ao tentar realizar o cadastro!");
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+            finalizarAguardar();
+        });
+
+        return false;
+    }
+
+</script>

@@ -143,10 +143,14 @@ a{
     color: white;
     background-color: black;
 }
+.login_usu img{
+    background-color: white;
+    border-radius: 10px;
+}
 .cadastro_usu{
     background: linear-gradient(rgb(6, 6, 24),rgb(19, 10, 73));
     width: 400px;
-    height: 520px;
+    height: 450px;
     margin-top: 90px;
     box-shadow: black 7px 7px 7px;
     border: black solid 2px;

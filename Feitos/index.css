@@ -1,0 +1,186 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.navbar{
+    height: 100px;
+    background: linear-gradient(rgb(6, 6, 24),rgb(19, 10, 73));
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    float: left;
+    position: fixed;
+}
+
+.imagem{
+    background-image: url(esportes.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+        height: 600px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+}
+.imagem .escrita {
+    color: white;
+    width: 550px;
+    font-weight: bolder;
+    margin-left: -300px;
+    font-size: 26px;
+    padding-top: 170px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.navbar .home{
+    width: 100px;
+    height: 100%;
+    margin-left: 350px;
+    text-align: center;
+    transition: 1s;
+}
+.navbar .simulador{
+    width: 100px;
+    height: 100%;
+    margin-right: 50px;
+    text-align: center;
+    transition: 1s;
+}
+.navbar .login{
+    width: 100px;
+    height: 100%;
+    margin-left: 50px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    transition: 1s;
+
+}
+.navbar .cadastro{
+    width: 100px;
+    height: 100%;
+    margin-right: 350px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    transition: 1s;
+}
+.navbar a{
+    color: white;
+    position: relative;
+    top: 35px;
+    text-decoration: none;
+    font-size: 20px;
+}
+.navbar .home:hover{
+    background: linear-gradient(blue,rgb(0, 145, 255), white);
+    box-shadow: black 7px 7px 7px;
+}
+.navbar .simulador:hover{
+    background: linear-gradient(blue,rgb(0, 145, 255), white);
+    box-shadow: black 7px 7px 7px;
+}
+.navbar .login:hover{
+    background: linear-gradient(blue,rgb(0, 145, 255), white);
+    box-shadow: black 7px 7px 7px;
+}
+.navbar .cadastro:hover{
+    background: linear-gradient(blue,rgb(0, 145, 255), white);
+    box-shadow: black 7px 7px 7px;
+}
+.footer{
+    background: linear-gradient(rgb(19, 10, 73),rgb(6, 6, 24));
+    height: 100px;
+    text-align: center;
+    justify-content: space-between;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: bolder;
+    padding-top: 30px;
+    color: white;
+    font-family: serif;
+    font-size: 18px;
+}
+a{
+    font-family: serif;
+}
+.active{
+    font-weight: bolder;
+}
+.login_usu{
+    background: linear-gradient(rgb(6, 6, 24),rgb(19, 10, 73));
+    width: 400px;
+    height: 350px;
+    margin-top: 100px;
+    box-shadow: black 7px 7px 7px;
+    border: black solid 2px;
+    text-align: center;
+    color: white;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.login_usu h2{
+    padding-top: 18px;
+}
+.login_usu h3{
+    padding-top: 28px;
+}
+.login_usu input{
+    padding: 6px;
+    margin: 10px;
+    border-radius: 10px;
+    text-align: center;
+    border: black 3px solid;
+}
+.login_usu button{
+    padding: 5px;
+    border-radius: 10px;
+    width: 90px;
+    height: 30px;
+    color: white;
+    background-color: black;
+}
+.login_usu img{
+    background-color: white;
+    border-radius: 10px;
+}
+.cadastro_usu{
+    background: linear-gradient(rgb(6, 6, 24),rgb(19, 10, 73));
+    width: 400px;
+    height: 450px;
+    margin-top: 90px;
+    box-shadow: black 7px 7px 7px;
+    border: black solid 2px;
+    text-align: center;
+    color: white;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.cadastro_usu h2{
+    padding-top: 10px;
+}
+.cadastro_usu h3{
+    padding-top: 10px;
+}
+.cadastro_usu input{
+    padding: 6px;
+    margin: 10px;
+    border-radius: 10px;
+    text-align: center;
+    border: black 3px solid;
+}
+.cadastro_usu button{
+    padding: 5px;
+    border-radius: 10px;
+    width: 90px;
+    height: 30px;
+    color: white;
+    background-color: black;
+}
+#senha_cad{
+    margin-left: 40px;
+}
+.cadastro_usu img{
+    background-color: white;
+    border-radius: 10px;
+}
+
+@Password123.digital
+@Password123.digital
