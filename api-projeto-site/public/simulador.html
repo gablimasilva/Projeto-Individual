@@ -5,8 +5,64 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Simulador / Esportes</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="icon" href="https://imagepng.org/wp-content/uploads/2019/04/bola-de-voleibol.png">
 </head>
 <body>
-    Hello World
+    <div class="navbar">
+        <div class="home"><a href="index.html" class="active">Home</a></div>
+        <div class="simulador"><a href="herois.html">Heróis</a></div>
+        <div class="bola"><a href="">⚽🏀🥊</a></div>
+        <div class="login"><a href="login.html">Login</a></div>
+        <div class="cadastro"><a href="cadastro.html">Cadastro</a></div>
+    </div>
+    <div class="ajuste"></div>
+    
+    <div class="imc">
+        <h1 class="imc_texto" style="color: blue;">O que é o IMC?</h1> <br> <br>
+        <h3 class="imc_texto">IMC é a sigla para <span style="color: blue;">Índice de Massa Corpórea</span>, parâmetro adotado pela <br> Organização Mundial de Saúde para calcular o peso ideal de cada pessoa. <br> <br>
+            O índice é calculado da seguinte maneira: divide-se o peso do paciente pela sua <br> altura elevada ao quadrado. Diz-se que o indivíduo tem peso normal quando <br> o resultado do IMC está entre <span style="color: blue;">18,5 e 24,9.</span> <br> <br>
+            Quer descobrir seu IMC? Insira seu peso e sua altura nos campos abaixo e compare com os índices da tabela. Importante: siga os exemplos e use pontos como separadores.</h3> <br><br>
+        </div> <div class="calculadora"> <h4 style="color: blue;">Peso(Em quilogramas):</h4> <br>
+            <input class="input_azul" type="text" id="peso_ipt" placeholder="Exemplo: 70"><br> <br>
+            <h4 style="color: blue;">Altura(Em centímetros):</h4> <br>
+            <input class="input_azul" type="text" id="altura_ipt" placeholder="Exemplo: 170"> <br><br>
+            <button class="bot_azul" onclick="calcular()">Calcular o IMC   ➤</button> <button class="bot_azul" onclick="apagar()">Apagar   ➤</button>
+            <div id="imc_resposta"></div>
+            <div id="resultado"></div>
+        </div>
+    <br>
 </body>
 </html>
+<script>
+    function calcular() {
+        let altura = document.getElementById('altura_ipt').value / 100
+        let peso = document.getElementById('peso_ipt').value
+        
+        if (peso <= 0 || peso == '') {
+            alert('Insira um peso válido!')
+        } else if(altura <= 0 || peso == ''){
+            alert('Insira uma altura válida!')
+        } else{
+            let calculo = (peso / (altura * altura)).toFixed(1)
+            document.getElementById('imc_resposta').innerHTML = `${calculo}`
+            if (calculo < 16) {
+                document.getElementById('resultado').innerHTML = `<span style="color: red;">Atenção!! Você está com magreza grave!</span>`
+            } else if (calculo < 17) {
+                document.getElementById('resultado').innerHTML = `<span style="color: orange;">Mais cuidado! Você está com magreza moderada!</span>`
+            } else if (calculo < 18.5) {
+                document.getElementById('resultado').innerHTML = `<span style="color: yellow;">Quase lá! Você está com magreza moderada!</span>`
+            } else if (calculo < 25) {
+                document.getElementById('resultado').innerHTML = `<span style="color: green;">Parabéns! Você está saúdavel!</span>`
+            } else if (calculo < 30) {
+                document.getElementById('resultado').innerHTML = `<span style="color: yellow;">Quase lá! Você está com sobrepeso!</span>`
+            } else if (calculo < 35) {
+                document.getElementById('resultado').innerHTML = `<span style="color: orange;">Mais cuidado! Você está com obesidade grau I!</span>`
+            } else if (calculo < 40) {
+                document.getElementById('resultado').innerHTML = `<span style="color: red;">Atenção!! Você está com obesidade grau II(severa)!</span>`
+            } else{
+                document.getElementById('resultado').innerHTML = `<span style="color: rgb(169, 12, 12);">URGENTE! Você está com obesidade grau III(mórbida)! Se consulte imediatamente com seu médico!</span>`
+            }
+        }
+    }
+</script>

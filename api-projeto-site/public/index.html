@@ -7,6 +7,7 @@
     <title>Home / Esportes</title>
         <link rel="stylesheet" href="index.css">
         <link rel="icon" href="https://imagepng.org/wp-content/uploads/2019/04/bola-de-voleibol.png">
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
     <div class="navbar">
@@ -20,22 +21,222 @@
         <div class="escrita">
             “A vida é para ser um desafio, pois desafios são o que nos fazem crescer.”  ― Manny Pacquiao
         </div>
-    </div>
-    <div class="graficos">
-
-    </div>
+    </div> <br><br>
     <div class="curiosidades">
 
     </div>
-    <div class="saúde">
+    <!-- <h1 style="text-align: center;">Dados sobre esportes</h1> -->
+    <div class="graficos">
+        <div class="graph">
+            <canvas id="chartBar" style="width: 100%; height: 100%;"></canvas>
+          </div>
+          <div class="graph">
+            <canvas id="chartLine" style="width: 100%; height: 100%;"></canvas>
+          </div>
+        </div>
+      
+        <div class="graficos2">
+            
+            <div class="graph">
+                <canvas id="chartPie" style="width: 100%; height: 100%;"></canvas>
+            </div>
+            <div class="graph">
+              <canvas id="chartBar2" style="width: 100%; height: 100%;"></canvas>
+            </div>
 
+        </div>
+    <div class="saude_titulo"><h1>Por que atividades físicas estão ligadas à saúde?</h1></div>
+    <div class="saúde">
+        <div class="est_aut">
+            <div class="estresse">
+            <h2>Reduz o estresse</h2>
+            Um dos grandes benefícios do esporte e da prática de atividades físicas é a redução do estresse. Quando você é uma pessoa fisicamente ativa, sua mente afasta os pensamentos negativos. Isso, porque os exercícios estimulam a produção de endorfina, que são substâncias que nosso cérebro produz que estão relacionadas ao relaxamento e bom humor. <br><br>
+            Além disso, praticar esportes pode ajudar a combater e evitar problemas psicológicos, como a depressão.
+            </div>
+            <div class="autocon">
+                <h2>Aumenta a autoconfiança</h2>
+            A prática de esportes também está relacionada à autoconfiança. Isso, porque na medida em que sua força e resistência aumentam, você se sente melhor. Isso influencia em outras áreas da sua vida pessoal ou profissional. Afinal, quando você se sente bem consigo mesmo, você se sente mais confiante e determinado.
+            <br><br>
+            Portanto, não é somente na aparência que você terá ganhos com o esporte. A imagem que tem de si mesmo ficará ainda melhor.
+            </div>
+        </div>
+            <div class="cog_con">
+                <div class="concentracao">
+                    <h2>Melhora a concentração</h2>
+                Um dos benefícios do esporte para a saúde é o aumento da concentração. Por mais que o nosso corpo envelheça com o passar dos anos, a atividade física ajuda a manter nossas habilidades mentais. <br><br>
+                Ainda, a pessoa que pratica esporte está sempre buscando se aperfeiçoar. Por esse motivo, ela precisa ter foco para alcançar seus objetivos e se concentrar para conseguir melhorar e alcançá-los.
+                </div>
+                <div class="cognitivas">
+                    <h2>Estimula atividades cognitivas</h2>
+                Cada esporte exige que você tenha habilidades diferentes. E para desenvolvê-las, será preciso prática. <br><br>
+                O aprendizado esportivo estimula sua capacidade cognitiva. Assim, você exercita seus músculos e suas funções mentais, como o raciocínio rápido, a percepção, o pensamento lógico, os reflexos e muitos outros.
+                </div>
+            </div>
+        <div class="pe_fi">
+            <div class="peso">
+            <h2>Ajuda a manter o peso ideal</h2>
+            O esporte e a atividade física também podem te ajudar a alcançar o peso ideal para seu corpo. Além de fortalecer a musculatura também ajuda a queimar calorias. Entretanto, é importante entender que a alimentação também é muito importante para conseguir alcançar o peso que você almeja. <br><br>
+            Uma alimentação saudável e balanceada, junto com a prática esportiva, te ajudará a ficar satisfeito com a balança e reduzir a probabilidade do surgimento de doenças como hipertensão, diabetes e colesterol alto.
+            </div>
+            <div class="fisico">
+                <h2>Aumenta o condicionamento<br> físico e a resistência</h2>
+            Por fim, o esporte te ajudará a aumentar seu condicionamento físico e sua resistência, incluindo sua imunidade. <br><br>
+            Com músculos fortes, você conseguirá se movimentar melhor e terá menos cansaço. Além disso, você terá mais fôlego e seu coração conseguirá bombear mais sangue, o que pode evitar o surgimento de doenças cardíacas.
+            </div>
+        </div>
     </div>
     <div class="footer">
-        Site desenvolvido por Gabriel Lima da Silva<br>
+        Site desenvolvido por Gabriel Lima da Silva ©<br>
         RA: 01212152<br>
         Bandtec Digital School
     </div>
-    <br><br><br><br><br><br><br><br><br><br>
-    <br><br><br><br><br><br><br><br><br><br>
 </body>
 </html>
+<script>
+  var ctxLine = document.getElementById("chartLine").getContext("2d");
+  var rotulosLine = ["1900(Paris)", "1948(Londres)", "1984(Los Angeles)", "2016(Rio de Janeiro)", "2020(Tóquio)"];
+  var dataLine = [2.2, 9.5, 23, 45, 48.8];
+  var configLine = {
+    type: 'line',
+    data: {
+      labels: rotulosLine, // referenciando a variável de rótulos (labels) para o gráfico de linha
+      datasets: [
+        {
+          label: '% Porcentagem de mulheres nas olímpiadas',
+          data: dataLine, // referenciando a variável de dados para o gráfico de linha
+          backgroundColor: [
+          'blue',
+            'rgb(3, 3, 99)',
+            'rgb(0, 153, 255)',
+          ],
+          borderColor: [
+            'black',
+          ],
+          borderWidth: 3
+        }
+      ]
+    },
+    options: {
+      // por padrão, vem como 'true', e faz com que o gráfico se 'mantenha com o mesmo aspecto de proporção', não ficando responsivo 
+      maintainAspectRatio: false,
+      scales: {
+        y: {
+          beginAtZero: true,
+        }
+      }
+    }
+  }
+  var ax_chartLine = new Chart(ctxLine, configLine); // criando o gráfico, chamando o new Chart da biblioteca, passando o contexto e as configurações
+
+
+  var ctxBar = document.getElementById("chartBar").getContext("2d");
+  var rotulosBar = ["Econômicos", "Falta de espaço", "Falta de resultados", "Cansaço/Preguiça", "Saúde", "Falta tempo"];
+  var dataBar = [1.4, 3.2, 6.1, 7, 12.5, 69.8];
+  var configBar = {
+    type: 'bar',
+    data: {
+      labels: rotulosBar,
+      datasets: [
+        {
+          label: 'Causa do abandono dos esportes (2013)',
+          data: dataBar,
+          backgroundColor: [
+            'red',
+            'orange',
+            'yellow',
+            'green',
+            'blue',
+            'purple',
+          ],
+          borderColor: [
+            'white',
+          ],
+          borderWidth: 1.5
+        }
+      ]
+    },
+    options: {
+      maintainAspectRatio: false,
+      scales: {
+        y: {
+          beginAtZero: true,
+        }
+      }
+    }
+  }
+  var ax_chartBar = new Chart(ctxBar, configBar);
+
+
+  // gráfico de Pizza/Torta
+  var ctxPie = document.getElementById("chartPie").getContext("2d");
+  var rotulosPie = ["Praticante de Atividade física", "Praticante de esportes", "Sedentários"];
+  var dataPie = [28.5, 25.6, 45.9];
+  var configPie = {
+    type: 'pie',
+    data: {
+      labels: rotulosPie,
+      datasets: [
+        {
+          label: 'Título do Gráfico',
+          data: dataPie,
+          backgroundColor: [
+            'blue',
+            'rgb(3, 3, 99)',
+            'rgb(0, 153, 255)',
+          ],
+          borderColor: [
+            'white',
+          ],
+          borderWidth: 2.5
+        }
+      ]
+    },
+    options: {
+      maintainAspectRatio: false,
+      scales: {
+        y: {
+          beginAtZero: true,
+        }
+      }
+    }
+  }
+  var ax_chartPie = new Chart(ctxPie, configPie);
+
+  var ctxBar = document.getElementById("chartBar2").getContext("2d");
+  var rotulosBar = ["de 15 a 19 anos", "de 20 a 24 anos", "de 25 a 34 anos", "de 35 a 44 anos", "de 45 a 54 anos", "de 55 a 64 anos", "65+"];
+  var dataBar = [32.7, 38.1, 40.7, 46.4, 53.5, 56.5, 64.4];
+  var configBar = {
+    type: 'bar',
+    data: {
+      labels: rotulosBar,
+      datasets: [
+        {
+          label: '% Porcentagem de Sedentários por idade',
+          data: dataBar,
+          backgroundColor: [
+            'red',
+            'orangered',
+            'orange',
+            'yellow',
+            'green',
+            'blue',
+            'purple',
+          ],
+          borderColor: [
+            'black',
+          ],
+          borderWidth: 2.5
+        }
+      ]
+    },
+    options: {
+      maintainAspectRatio: false,
+      scales: {
+        y: {
+          beginAtZero: true,
+        }
+      }
+    }
+  }
+  var ax_chartBar = new Chart(ctxBar, configBar);
+</script>
