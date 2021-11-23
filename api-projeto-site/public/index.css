@@ -10,6 +10,8 @@
     width: 100%;
     float: left;
     position: fixed;
+    flex-direction: row;
+    z-index: 3;
 }
 
 .imagem{
@@ -17,12 +19,11 @@
         background-repeat: no-repeat;
         background-size: cover;
         background-attachment: fixed;
-        height: 600px;
+        height: 650px;
         width: 100%;
         display: flex;
         justify-content: center;
         align-items: center;
-        /* box-shadow: black 3px 7px 7px; */
 }
 .imagem .escrita {
     color: white;
@@ -31,7 +32,8 @@
     margin-left: -300px;
     font-size: 26px;
     padding-top: 170px;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: "Montserrat";
+
 }
 .navbar .home{
     width: 100px;
@@ -279,7 +281,7 @@ a{
 .saúde{
     width: 100%;
     height: 710px;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: "Montserrat";
 }
 
 .saúde h2{
@@ -290,7 +292,7 @@ a{
     width: 100%;
     height: 100px;
     text-align: center;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: "Montserrat";
 }
 .saude_titulo h1{
     padding-top: 20px;
@@ -306,18 +308,15 @@ a{
     width: 40%;
     margin-left: 5%;
     margin-right: 5%;
-    /* border: black 2px solid; */
     border-radius: 20px;
-    /* box-shadow: black 2px 3px 3px; */
 }
 .autocon{
     width: 40%;
-    /* border: black 2px solid; */
     text-align: center;
     border-radius: 20px;
-    /* box-shadow: black 2px 3px 3px; */
 }
 .cog_con{
+    margin-top: 20px;
     display: flex;
     flex-direction: row;
     margin-bottom: 10px;
@@ -327,18 +326,15 @@ a{
     width: 40%;
     margin-left: 5%;
     margin-right: 5%;
-    /* border: black 2px solid; */
     border-radius: 20px;
-    /* box-shadow: black 2px 3px 3px; */
 }
 .cognitivas{
     text-align: center;
     width: 40%;
-    /* border: black 2px solid; */
     border-radius: 20px;
-    /* box-shadow: black 2px 3px 3px; */
 }
 .pe_fi{
+    margin-top: 20px;
     display: flex;
     flex-direction: row;
     margin-bottom: 10px;
@@ -348,46 +344,110 @@ a{
     width: 40%;
     margin-left: 5%;
     margin-right: 5%;
-    /* border: black 2px solid; */
     border-radius: 20px;
-    /* box-shadow: black 2px 3px 3px; */
 }
 .fisico{
     width: 40%;
-    /* border: black 2px solid; */
     text-align: center;
     border-radius: 20px;
-    /* box-shadow: black 2px 3px 3px; */
 }
 .espaco{
-    height: 170px;
-}
-.herois_nacionais{
-    display: flex;
-    flex-direction: column;
+    height: 100px;
 }
 .olimpiadas{
-    margin-left: 10%;
-    height: 400px;
-    background-image: url('http://cnsasousa.com.br/wp_system/wp-content/uploads/2016/06/an%C3%A9is-olimpicos.jpg');
+    background-image: url('https://www.hollywoodreporter.com/wp-content/uploads/2021/06/issue24-Report-Olympics-Illustration_by_KyleEllingson.gif?w=681&h=383&crop=1');
     background-repeat: no-repeat;
     background-size: cover;
-    /* background-attachment: fixed; */
     height: 600px;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-
-.olimpiadas .escrita {
-    color: white;
-    width: 550px;
-    font-weight: bolder;
-    margin-left: -300px;
-    font-size: 26px;
-    padding-top: 170px;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    color: rgb(0, 153, 255);
+.herois_nacionais1{
+    display: flex;
+    width: 100%;
+    height: 400px;
+    background-color: #FCFEF0;
+    font-family: "Montserrat";
 }
-  
+.herois_nacionais2{
+    display: flex;
+    width: 100%;
+    height: 400px;
+    background-color: rgb(217, 217, 252);
+    font-family: "Montserrat";
+}
+.imagem_1{
+    margin-top: 5%;
+    display: flex;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+.imagem_1 img{
+    border-radius: 15px;
+    box-shadow: 5px 5px 5px;
+}
+.primeiro_texto{
+    margin-top: 5%;
+    width: 25%;
+    margin-right: 10%;
+    position: relative;
+    text-align: center;
+    top: 65px;
+    left: 130px;
+}
+.segundo_texto{
+    margin-top: 5%;
+    width: 25%;
+    margin-right: 10%;
+    position: relative;
+    text-align: center;
+    top: 60px;
+    left: 130px;
+}
+.imagem_2{
+    margin-top: 5%;
+    display: flex;
+    margin-left: 20%;
+    margin-right: 10%;
+}
+.imagem_2 img{
+    border-radius: 15px;
+    box-shadow: 5px 5px 5px;
+}
+.curiosidades{
+    width: 100vw;
+    z-index: 2;
+    display: grid;
+    place-items: center;
+    height: 70vh;
+}
+#items_wrapper{
+    z-index: 2;
+    /* margin-left: 420px; */
+    width: 60vw;
+    height: 100%;
+}
+#items{
+    z-index: 2;
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    border-radius: 15px;
+}
+#items_wrapper img{
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.item{
+    z-index: 2;
+    flex: none;
+    width: 100%;
+    height: 400px;
+    scroll-snap-align: start;
+    pointer-events: none;
+}

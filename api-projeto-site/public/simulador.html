@@ -4,19 +4,21 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simulador / Esportes</title>
+    <title>Consultoria / Esportes</title>
+    <script src="./assets/js/funcoes.js"></script>
     <link rel="stylesheet" href="index.css">
     <link rel="icon" href="https://imagepng.org/wp-content/uploads/2019/04/bola-de-voleibol.png">
 </head>
-<body>
+<body onload="validarSessao()">
     <div class="navbar">
         <div class="home"><a href="index.html" class="active">Home</a></div>
-        <div class="simulador"><a href="herois.html">Heróis</a></div>
+        <div class="simulador"><a href="heroi.html">Heróis</a></div>
         <div class="bola"><a href="">⚽🏀🥊</a></div>
         <div class="login"><a href="login.html">Login</a></div>
         <div class="cadastro"><a href="cadastro.html">Cadastro</a></div>
     </div>
     <div class="ajuste"></div>
+    <h3>Olá, <span id="b_usuario"></span></h3>
     
     <div class="imc">
         <h1 class="imc_texto" style="color: blue;">O que é o IMC?</h1> <br> <br>

@@ -6,7 +6,7 @@ function validarSessao() {
     var nome = sessionStorage.NOME_USUARIO;
     
     if (email != null && nome != null) {
-        b_usuario.innerHTML = nome;       
+        document.getElementById("b_usuario").textContent = nome;       
         // finalizarAguardar();
     } else {
         window.location = "../login.html";
