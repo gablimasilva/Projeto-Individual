@@ -11,7 +11,7 @@
   />
     <link rel="stylesheet"
           href="https://fonts.googleapis.com/css?family=Montserrat">
-        <link rel="stylesheet" href="index.css">
+        <link rel="stylesheet" href="herois.css">
         <link rel="icon" href="https://images.vexels.com/media/users/3/229528/isolated/lists/43929ffbdf2c80fcbe27eb145922e394-ilustracao-do-lado-da-bola-de-futebol-americano.png"">
 </head>
 <body>
@@ -141,45 +141,75 @@
 
     (() => {
         window.addEventListener("scroll", function() {
-            if (window.scrollY > 250) {
+            if (window.scrollY > 150) {
                 document.getElementById("esq_1").style.visibility = "visible";
                 cardAtleta1.classList.add("animate__animated", "animate__backInRight");
+            } else{
+                document.getElementById("esq_1").style.visibility = "hidden";
+                cardAtleta1.classList.remove("animate__animated", "animate__backInRight");
             }
-            if (window.scrollY > 650) {
+            if (window.scrollY > 550) {
                 document.getElementById("dir_1").style.visibility = "visible";
                 cardAtleta2.classList.add("animate__animated", "animate__backInLeft");
+            } else{
+                document.getElementById("dir_1").style.visibility = "hidden";
+                cardAtleta2.classList.remove("animate__animated", "animate__backInLeft");
             }
-            if (window.scrollY > 1050) {
+            if (window.scrollY > 950) {
                 document.getElementById("esq_2").style.visibility = "visible";
                 cardAtleta3.classList.add("animate__animated", "animate__backInRight");
+            } else{
+                document.getElementById("esq_2").style.visibility = "hidden";
+                cardAtleta3.classList.remove("animate__animated", "animate__backInRight");
             }
-            if (window.scrollY > 1450) {
+            if (window.scrollY > 1350) {
                 document.getElementById("dir_2").style.visibility = "visible";
                 cardAtleta4.classList.add("animate__animated", "animate__backInLeft");
+            } else{
+                document.getElementById("dir_2").style.visibility = "hidden";
+                cardAtleta4.classList.remove("animate__animated", "animate__backInLeft");
             }
-            if (window.scrollY > 1850) {
+            if (window.scrollY > 1750) {
                 document.getElementById("esq_3").style.visibility = "visible";
                 cardAtleta5.classList.add("animate__animated", "animate__backInRight");
+            } else{
+                document.getElementById("esq_3").style.visibility = "visible";
+                cardAtleta5.classList.remove("animate__animated", "animate__backInRight");
             }
-            if (window.scrollY > 2250) {
+            if (window.scrollY > 2150) {
                 document.getElementById("dir_3").style.visibility = "visible";
                 cardAtleta6.classList.add("animate__animated", "animate__backInLeft");
+            } else{
+                document.getElementById("dir_3").style.visibility = "hidden";
+                cardAtleta6.classList.remove("animate__animated", "animate__backInLeft");
             }
-            if (window.scrollY > 2650) {
+            if (window.scrollY > 2550) {
                 document.getElementById("esq_4").style.visibility = "visible";
                 cardAtleta7.classList.add("animate__animated", "animate__backInRight");
+            } else{
+                document.getElementById("esq_4").style.visibility = "hidden";
+                cardAtleta7.classList.remove("animate__animated", "animate__backInRight");
             }
-            if (window.scrollY > 3050) {
+            if (window.scrollY > 2950) {
                 document.getElementById("dir_4").style.visibility = "visible";
                 cardAtleta8.classList.add("animate__animated", "animate__backInLeft");
+            } else{
+                document.getElementById("dir_4").style.visibility = "hidden";
+                cardAtleta8.classList.remove("animate__animated", "animate__backInLeft");
             }
-            if (window.scrollY > 3450) {
+            if (window.scrollY > 3350) {
                 document.getElementById("esq_5").style.visibility = "visible";
                 cardAtleta9.classList.add("animate__animated", "animate__backInRight");
+            } else{
+                document.getElementById("esq_5").style.visibility = "hidden";
+                cardAtleta9.classList.remove("animate__animated", "animate__backInRight");
             }
-            if (window.scrollY > 3850) {
+            if (window.scrollY > 3750) {
                 document.getElementById("dir_5").style.visibility = "visible";
                 cardAtleta10.classList.add("animate__animated", "animate__backInLeft");
+            } else{
+                document.getElementById("dir_5").style.visibility = "hidden";
+                cardAtleta10.classList.remove("animate__animated", "animate__backInLeft");
             }
         })
     })();

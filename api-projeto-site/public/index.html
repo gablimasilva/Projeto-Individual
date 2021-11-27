@@ -1,107 +1,179 @@
 <!DOCTYPE html>
 <html lang="pt">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home / Esportes</title>
-    <link rel="stylesheet"
-          href="https://fonts.googleapis.com/css?family=Montserrat">
-        <link rel="stylesheet" href="index.css">
-        <link rel="icon" href="https://imagepng.org/wp-content/uploads/2019/04/bola-de-voleibol.png">
-        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home / Esportes</title>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+  <link rel="stylesheet" href="index.css">
+  <link rel="icon" href="https://imagepng.org/wp-content/uploads/2019/04/bola-de-voleibol.png">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
+
 <body>
-    <div class="navbar">
-        <div class="home"><a href="index.html" class="active">Home</a></div>
-        <div class="simulador"><a href="heroi.html">Heróis</a></div>
-        <div class="bola"><a href="">⚽🏀🥊</a></div>
-        <div class="login"><a href="login.html">Login</a></div>
-        <div class="cadastro"><a href="cadastro.html">Cadastro</a></div>
+  <div class="navbar">
+    <div class="home"><a href="index.html" class="active">Home</a></div>
+    <div class="simulador"><a href="heroi.html">Heróis</a></div>
+    <div class="bola"><a href="">⚽🏀🥊</a></div>
+    <div class="login"><a href="login.html">Login</a></div>
+    <div class="cadastro"><a href="cadastro.html">Cadastro</a></div>
+  </div>
+  <div class="imagem">
+    <div class="escrita">
+      “A vida é para ser um desafio, pois desafios são o que nos fazem crescer.” <br>― Manny Pacquiao
     </div>
-    <div class="imagem">
-        <div class="escrita">
-            “A vida é para ser um desafio, pois desafios são o que nos fazem crescer.”  <br>― Manny Pacquiao
-        </div>
+    <div class="marketing" id="mark"> <a href="">Inscreva-se</a> para obter uma consultoria de treinos gratuita!</div>
   </div> <br><br>
-  <h1 style="text-align: center; font-family: montserrat;">Esportes mais praticados do mundo:</h1>
-    <div class="curiosidades">
-      <div id="items_wrapper">
-          <div id="items" onmouseover="mexer()">
-              <div class="item"><img src="https://images.tcdn.com.br/img/img_prod/650565/papel_de_parede_paisagens_floresta_0020_adesivo_de_parede_909_2_20201007171912.jpg"></div>
-              <div class="item"><img src="https://media.istockphoto.com/photos/mountain-landscape-picture-id517188688?b=1&k=20&m=517188688&s=170667a&w=0&h=AF2jDsSkcse_G3a9BCQA22LDhezmxIUZKx5vRh3aFDI="></div>
-              <div class="item"><img src="https://media.istockphoto.com/photos/picturesque-morning-in-plitvice-national-park-colorful-spring-scene-picture-id1093110112?b=1&k=20&m=1093110112&s=170667a&w=0&h=WKhf8Ywn-t2OP56k6KVWzH9iYZa24OvLwp7Ex9TJJBw="></div>
-              <div class="item"><img src="https://cdn.pixabay.com/photo/2016/04/30/10/00/nature-1362673__340.jpg"></div>
-              <div class="item"><img src="https://cdn.pixabay.com/photo/2016/02/20/00/21/landscape-1211401__340.jpg"></div>
-          </div>
-        </div>
+  <h1 style="text-align: center; font-family: montserrat;">Esportes mais populares do mundo:</h1>
+  <div class="carrossel meio">
+    <div class="imagens">
+      <input type="radio" name="r" id="r1" checked>
+      <input type="radio" name="r" id="r2">
+      <input type="radio" name="r" id="r3">
+      <input type="radio" name="r" id="r4">
+      <input type="radio" name="r" id="r5">
+      <input type="radio" name="r" id="r6">
+      <input type="radio" name="r" id="r7">
+      <input type="radio" name="r" id="r8">
+      <input type="radio" name="r" id="r9">
+      <input type="radio" name="r" id="r10">
+      <div class="ima s1">
+        <img
+          src="https://diariodonordeste.verdesmares.com.br/image/contentid/policy:1.3141634:1632861916/PSG.jpg?f=16x9&h=720&q=0.8&w=1280&$p$f$h$q$w=1980032">
       </div>
-      <div class="saude_titulo"><h1>6 Motivos para você fazer atividades físicas:</h1></div>
-      <div class="saúde">
-          <div class="est_aut">
-              <div class="estresse">
-              <img src="" alt="">
-              <h2>Reduz o estresse</h2>
-              Um dos grandes benefícios do esporte e da prática de atividades físicas é a redução do estresse. Quando você é uma pessoa fisicamente ativa, sua mente afasta os pensamentos negativos. Isso, porque os exercícios estimulam a produção de endorfina, que são substâncias que nosso cérebro produz que estão relacionadas ao relaxamento e bom humor. <br><br>
-              Além disso, praticar esportes pode ajudar a combater e evitar problemas psicológicos, como a depressão.
-              </div>
-              <div class="autocon">
-              <img src="" alt="">
-              <h2>Aumenta a autoconfiança</h2>
-              A prática de esportes também está relacionada à autoconfiança. Isso, porque na medida em que sua força e resistência aumentam, você se sente melhor. Isso influencia em outras áreas da sua vida pessoal ou profissional. Afinal, quando você se sente bem consigo mesmo, você se sente mais confiante e determinado.
-              <br><br>
-              Portanto, não é somente na aparência que você terá ganhos com o esporte. A imagem que tem de si mesmo ficará ainda melhor.
-              </div>
-          </div>
-              <div class="cog_con">
-                  <div class="concentracao">
-                      <h2>Melhora a concentração</h2>
-                  Um dos benefícios do esporte para a saúde é o aumento da concentração. Por mais que o nosso corpo envelheça com o passar dos anos, a atividade física ajuda a manter nossas habilidades mentais. <br><br>
-                  Ainda, a pessoa que pratica esporte está sempre buscando se aperfeiçoar. Por esse motivo, ela precisa ter foco para alcançar seus objetivos e se concentrar para conseguir melhorar e alcançá-los.
-                  </div>
-                  <div class="cognitivas">
-                      <h2>Estimula atividades cognitivas</h2>
-                  Cada esporte exige que você tenha habilidades diferentes. E para desenvolvê-las, será preciso prática. <br><br>
-                  O aprendizado esportivo estimula sua capacidade cognitiva. Assim, você exercita seus músculos e suas funções mentais, como o raciocínio rápido, a percepção, o pensamento lógico, os reflexos e muitos outros.
-                  </div>
-              </div>
-          <div class="pe_fi">
-              <div class="peso">
-              <h2>Ajuda a manter o peso ideal</h2>
-              O esporte e a atividade física também podem te ajudar a alcançar o peso ideal para seu corpo. Além de fortalecer a musculatura também ajuda a queimar calorias. Entretanto, é importante entender que a alimentação também é muito importante para conseguir alcançar o peso que você almeja. <br><br>
-              Uma alimentação saudável e balanceada, junto com a prática esportiva, te ajudará a ficar satisfeito com a balança e reduzir a probabilidade do surgimento de doenças como hipertensão, diabetes e colesterol alto.
-              </div>
-              <div class="fisico">
-                  <h2>Aumenta o condicionamento<br> físico e a resistência</h2>
-              Por fim, o esporte te ajudará a aumentar seu condicionamento físico e sua resistência, incluindo sua imunidade. <br><br>
-              Com músculos fortes, você conseguirá se movimentar melhor e terá menos cansaço. Além disso, você terá mais fôlego e seu coração conseguirá bombear mais sangue, o que pode evitar o surgimento de doenças cardíacas.
-              </div>
-          </div>
+      <div class="ima">
+        <img
+          src="http://blog.tremeterra.com.br/wp-content/uploads/2019/09/296782-modalidades-do-atletismo-conheca-as-principais-praticadas-no-brasil.jpg">
       </div>
-      <div class="graficos">
-        <div class="graph">
-            <canvas id="chartBar" style="width: 100%; height: 100%;"></canvas>
-          </div>
-          <div class="graph">
-            <canvas id="chartLine" style="width: 100%; height: 100%;"></canvas>
-          </div>
-        </div>
-        
-        <div class="graficos2">
-            
-          <div class="graph">
-            <canvas id="chartPie" style="width: 100%; height: 100%;"></canvas>
-          </div>
-          <div class="graph">
-            <canvas id="chartBar2" style="width: 100%; height: 100%;"></canvas>
-          </div>
-        </div> <br><br>
-        <div class="footer">
-            Site desenvolvido por Gabriel Lima da Silva ©<br>
-            RA: 01212152<br>
-            Bandtec Digital School
-        </div>
+      <div class="ima">
+        <img src="https://www.infoescola.com/wp-content/uploads/2016/09/t%C3%AAnis_215158288.jpg">
+      </div>
+      <div class="ima">
+        <img
+          src="https://conteudo.imguol.com.br/c/esporte/70/2021/11/21/largada-do-gp-do-qatar-teve-hamilton-sem-ser-incomodado-e-verstappen-atacando-por-dentro-os-primeiros-colocados-1637506080060_v2_750x421.jpg.webp">
+      </div>
+      <div class="ima">
+        <img src="https://lancelivre.pt/wp-content/uploads/2020/05/michael-jordan-recordes.jpg">
+      </div>
+      <div class="ima">
+        <img src="https://diariodonordeste.verdesmares.com.br/image/contentid/policy:1.3095211:1623174365/Brasil-x-China.jpg?f=16x9&h=720&q=0.8&w=1280&$p$f$h$q$w=e9c175e">
+      </div>
+      <div class="ima">
+        <img src="https://media.h2foz.com.br/2020/11/37488a2e-post_605112_img2_wish_resort_golf_2.jpg">
+      </div>
+      <div class="ima">
+        <img src="https://www.infoescola.com/wp-content/uploads/2008/03/beisebol_557405302.jpg">
+      </div>
+      <div class="ima">
+        <img src="https://sportsregras.com/wp-content/uploads/2016/04/futebol-americano-quarterback-e1527507103715.jpg">
+      </div>
+      <div class="ima">
+        <img src="https://i.pinimg.com/originals/af/72/9b/af729b439dd758a757c77819efd2c4b4.jpg">
+      </div>
+    </div>
+    <div class="navegacao">
+      <label for="r1" class="barra"></label>
+      <label for="r2" class="barra"></label>
+      <label for="r3" class="barra"></label>
+      <label for="r4" class="barra"></label>
+      <label for="r5" class="barra"></label>
+      <label for="r6" class="barra"></label>
+      <label for="r7" class="barra"></label>
+      <label for="r8" class="barra"></label>
+      <label for="r9" class="barra"></label>
+      <label for="r10" class="barra"></label>
+    </div>
+  </div>
+  <div class="saude_titulo">
+    <h1>6 Motivos para você fazer atividades físicas:</h1>
+  </div>
+  <div class="saúde">
+    <div class="est_aut">
+      <div class="estresse">
+        <img src="" alt="">
+        <h2>Reduz o estresse</h2>
+        Um dos grandes benefícios do esporte e da prática de atividades físicas é a redução do estresse. Quando você é
+        uma pessoa fisicamente ativa, sua mente afasta os pensamentos negativos. Isso, porque os exercícios estimulam a
+        produção de endorfina, que são substâncias que nosso cérebro produz que estão relacionadas ao relaxamento e bom
+        humor. <br><br>
+        Além disso, praticar esportes pode ajudar a combater e evitar problemas psicológicos, como a depressão.
+      </div>
+      <div class="autocon">
+        <img src="" alt="">
+        <h2>Aumenta a autoconfiança</h2>
+        A prática de esportes também está relacionada à autoconfiança. Isso, porque na medida em que sua força e
+        resistência aumentam, você se sente melhor. Isso influencia em outras áreas da sua vida pessoal ou profissional.
+        Afinal, quando você se sente bem consigo mesmo, você se sente mais confiante e determinado.
+        <br><br>
+        Portanto, não é somente na aparência que você terá ganhos com o esporte. A imagem que tem de si mesmo ficará
+        ainda melhor.
+      </div>
+    </div>
+    <div class="cog_con">
+      <div class="concentracao">
+        <h2>Melhora a concentração</h2>
+        Um dos benefícios do esporte para a saúde é o aumento da concentração. Por mais que o nosso corpo envelheça com
+        o passar dos anos, a atividade física ajuda a manter nossas habilidades mentais. <br><br>
+        Ainda, a pessoa que pratica esporte está sempre buscando se aperfeiçoar. Por esse motivo, ela precisa ter foco
+        para alcançar seus objetivos e se concentrar para conseguir melhorar e alcançá-los.
+      </div>
+      <div class="cognitivas">
+        <h2>Estimula atividades cognitivas</h2>
+        Cada esporte exige que você tenha habilidades diferentes. E para desenvolvê-las, será preciso prática. <br><br>
+        O aprendizado esportivo estimula sua capacidade cognitiva. Assim, você exercita seus músculos e suas funções
+        mentais, como o raciocínio rápido, a percepção, o pensamento lógico, os reflexos e muitos outros.
+      </div>
+    </div>
+    <div class="pe_fi">
+      <div class="peso">
+        <h2>Ajuda a manter o peso ideal</h2>
+        O esporte e a atividade física também podem te ajudar a alcançar o peso ideal para seu corpo. Além de fortalecer
+        a musculatura também ajuda a queimar calorias. Entretanto, é importante entender que a alimentação também é
+        muito importante para conseguir alcançar o peso que você almeja. <br><br>
+        Uma alimentação saudável e balanceada, junto com a prática esportiva, te ajudará a ficar satisfeito com a
+        balança e reduzir a probabilidade do surgimento de doenças como hipertensão, diabetes e colesterol alto.
+      </div>
+      <div class="fisico">
+        <h2>Aumenta o condicionamento<br> físico e a resistência</h2>
+        Por fim, o esporte te ajudará a aumentar seu condicionamento físico e sua resistência, incluindo sua imunidade.
+        <br><br>
+        Com músculos fortes, você conseguirá se movimentar melhor e terá menos cansaço. Além disso, você terá mais
+        fôlego e seu coração conseguirá bombear mais sangue, o que pode evitar o surgimento de doenças cardíacas.
+      </div>
+    </div>
+  </div>
+  <h1 style="font-family: Montserrat; text-align: center;">Algumas curiosidades:</h1>
+  <div class="graficos">
+    <div class="graph">
+      <canvas id="chartBar" style="width: 100%; height: 100%;"></canvas>
+    </div>
+    <div class="graph">
+      <canvas id="chartLine" style="width: 100%; height: 100%;"></canvas>
+    </div>
+  </div>
+
+  <div class="graficos2">
+
+    <div class="graph">
+      <canvas id="chartPie" style="width: 100%; height: 100%;"></canvas>
+    </div>
+    <div class="graph">
+      <canvas id="chartBar2" style="width: 100%; height: 100%;"></canvas>
+    </div>
+  </div> <br><br>
+  <div class="footer">
+    Site desenvolvido por Gabriel Lima da Silva ©<br>
+    RA: 01212152<br>
+    Bandtec Digital School
+  </div>
 </body>
+
 </html>
 <script>
 
@@ -117,7 +189,7 @@
           label: '% Porcentagem de mulheres nas olímpiadas',
           data: dataLine, // referenciando a variável de dados para o gráfico de linha
           backgroundColor: [
-          'blue',
+            'blue',
             'rgb(3, 3, 99)',
             'rgb(0, 153, 255)',
           ],
@@ -251,5 +323,19 @@
     }
   }
   var ax_chartBar = new Chart(ctxBar, configBar);
+
+  let pulso = document.getElementById('mark');
+
+    ( () => {
+      pulso.classList.add("animate__animated", "animate__heartBeat")
+      window.addEventListener("scroll", function(){
+        if (window.scrollY == 0) {
+          pulso.classList.add("animate__animated", "animate__heartBeat")
+        } else{
+          pulso.classList.remove("animate__animated", "animate__heartBeat")
+        }
+    })
+
+  })()
 
 </script>
