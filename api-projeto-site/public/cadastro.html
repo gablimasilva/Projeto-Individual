@@ -27,7 +27,7 @@
     </div>
     <div class="imagem ">
         <div class="cadastro_usu">
-                <h2>Seja bem-vindo!</h2><br><br>
+                <h2>Seja bem-vindo!</h2>
                     <form id="form_cadastro" method="post" onsubmit="return cadastrar()">
                         Nome:<br>
                         <input name="nome" type="text" placeholder="Digite seu nome">
@@ -35,6 +35,8 @@
                         E-mail:<br>
                         <input name="email" type="text" placeholder="meuemail@provedor.com">
                         <br>
+                        Esporte favorito: <br>
+                        <input type="text" name="esporte" placeholder="Futebol, vôlei, basquete..."><br>
                         Senha:<br>
                         <input name="senha" id="senha_cad" type="password" placeholder="Digite sua melhor senha"> <img id="olho" onclick="mostrarsenha()" src="https://icon-library.com/images/show-password-icon/show-password-icon-18.jpg" height="20px">
                         <br>
@@ -84,9 +86,10 @@
         var email = formulario.get("email");
         var senha = formulario.get("senha");
         var confirmacaoSenha = formulario.get("confirmacao-senha");
+        var esporte = formulario.get("esporte")
 
         // TODO: VERIFICAR AS VALIDAÇÕES QUE ELES ESTÃO APRENDENDO EM ALGORITMOS 
-        if (nome == "" || email == "" || senha == "" || confirmacaoSenha == "") {
+        if (nome == "" || email == "" || senha == "" || confirmacaoSenha == "" || esporte == "") {
             
             window.alert("Preencha todos os campos para prosseguir!");
             if (nome == "")  {
@@ -115,6 +118,9 @@
             window.alert("As senhas inseridas devem ser iguais para prosseguir!");
             finalizarAguardar();
             return false;
+        }
+        if (!isNaN(esporte)) {
+            window.alert("A senha não pode ser um número!")
         }
 
         fetch("/usuarios/cadastrar", {

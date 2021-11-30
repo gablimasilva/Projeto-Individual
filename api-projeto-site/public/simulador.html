@@ -18,7 +18,7 @@
         <div class="cadastro"><a href="cadastro.html">Cadastro</a></div>
     </div>
     <div class="ajuste"></div>
-    <h3>Olá, <span id="b_usuario"></span></h3>
+    <h3>Olá, <span id="b_usuario"></span> <span id="contador"></span> </h3>
     
     <div class="imc">
         <h1 class="imc_texto" style="color: blue;">O que é o IMC?</h1> <br> <br>
@@ -37,6 +37,10 @@
 </body>
 </html>
 <script>
+    fetch("/usuarios/listar")
+        .then(res => res.json())
+                .then(res => {contador.innerHTML = res[0].usuario})
+
     function calcular() {
         let altura = document.getElementById('altura_ipt').value / 100
         let peso = document.getElementById('peso_ipt').value

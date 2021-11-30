@@ -62,6 +62,7 @@ function entrar (req, res) {
 function cadastrar(req, res) {
     var nome = req.body.nome;
     var email = req.body.email;
+    var esporte = req.body.esporte;
     var senha = req.body.senha;
 
     if (nome == undefined) {
@@ -70,8 +71,10 @@ function cadastrar(req, res) {
         res.status(400).send("Seu email está undefined!");
     } else if (senha == undefined) {
         res.status(400).send("Sua senha está undefined!");
+    } else if (esporte == undefined) {
+        res.status(400).send("Seu esporte favorito está undefined!");
     } else {
-        usuarioModel.cadastrar(nome, email, senha)
+        usuarioModel.cadastrar(nome, email, esporte, senha)
         .then(
             function (resultado) {
                 res.json(resultado);
