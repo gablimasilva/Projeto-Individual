@@ -398,7 +398,7 @@ a{
 }
 .barra:hover{
     background-color: #fff;
-
+    
 }
 input[name="r"]{
     position: absolute;
@@ -446,4 +446,68 @@ input[name="r"]{
 }
 #r10:checked ~ .s1{
     margin-left: -90%;
+}
+
+.img_consultoria{
+    background-image: url(https://vempradome.com.br/blog/wp-content/uploads/2018/11/consultoria-990x550.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    height: 650px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.consultoria{
+    margin-top: 10%;
+    background-color: white;
+    width: 40%;
+    height: 60%;
+    padding: 30px;
+    text-align: justify;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    background: linear-gradient(rgb(19, 10, 73),rgb(6, 6, 24));
+    color: white;
+    border: white solid 4px;
+    border-radius: 10px;
+}
+.consultoria img{
+    width: 200px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+}
+.consultoria input{
+    margin-top: 10px;
+    width: 175px;
+    height: 20px;
+    border-radius: 10px;
+    transition: 1s;
+}
+.consultoria input:hover{
+    width: 250px;
+}
+.consultoria button{
+    width: 150px;
+    height: 30px;
+    background-color: black;
+    color: white;
+    transition: 1s;
+}
+.consultoria button:hover{
+    width: 180px;
+    height: 40px;
+    background-color: white;
+    color: black;
+}
+
+#parte3 {
+    margin-top: 10px;
+}
+#metricas{
+    position: relative;
+    top: 110px;
+    margin-left: 5px;
+    color: white;
 }

@@ -25,12 +25,12 @@ var mySqlConfig = {
     database: "projetoindividual",
 };
 
-function executar(instrucao) {
+function executar(instrucao, inserir) {
     // VERIFICA A VARIÁVEL DE AMBIENTE SETADA EM app.js
     if (process.env.AMBIENTE_PROCESSO == "producao") {
         return new Promise(function (resolve, reject) {
             sql.connect(sqlServerConfig).then(function () {
-                return sql.query(instrucao);
+                return sql.query(instrucao,inserir);
             }).then(function (resultados) {
                 console.log(resultados);
                 resolve(resultados.recordset);
@@ -50,10 +50,21 @@ function executar(instrucao) {
                 conexao.end();
                 if (erro) {
                     reject(erro);
-                }                      
+                }                    
                 console.log(resultados);
                 resolve(resultados);    
             });
+            var conexao2 = mysql.createConnection(mySqlConfig);
+            conexao2.connect();
+            conexao2.query(inserir, function(erro, resultados) {
+                conexao2.end();
+                if (erro) {
+                    reject(erro);
+                }                    
+                console.log(resultados);
+                resolve(resultados);    
+            });
+            
             conexao.on('error', function (erro) {
                 return ("ERRO NO MySQL WORKBENCH (Local): ", erro.sqlMessage);
             });

@@ -6,18 +6,22 @@ function validarSessao() {
     var nome = sessionStorage.NOME_USUARIO;
     
     if (email != null && nome != null) {
-        document.getElementById("b_usuario").textContent = nome;       
+        document.getElementById("b_usuario").textContent = capitalize(nome);       
         // finalizarAguardar();
     } else {
         window.location = "../login.html";
     }
+}
+
+function capitalize(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
 }
    
 function limparSessao() {
     // aguardar();
     sessionStorage.clear();
    // finalizarAguardar();
-    window.location = "../login.html";
+    window.location = "index.html";
 }
 
 // carregamento (loading)
