@@ -8,20 +8,20 @@
     <script src="./assets/js/funcoes.js"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
     <link rel="stylesheet" href="index.css">
-    <link rel="icon" href="https://imagepng.org/wp-content/uploads/2019/04/bola-de-voleibol.png">
+    <link rel="icon" href="https://images.vexels.com/media/users/3/130158/isolated/lists/78bc8a37d480ee704d40da61d4f1a6be-icone-lateral-do-haltere.png">
 </head>
-<body onload="validarSessao()" style="font-family: montserrat;">
+<body onload="validarSessao(), carregar()" style="font-family: montserrat;">
     <div class="navbar">
-        <div class="home"><a href="" onclick="limparSessao()" class="active">Sair</a></div>
-        <div class="simulador"><a href="heroi.html">Heróis</a></div>
+        <div class="home"><a href="index.html" onclick="limparSessao()" class="active">Sair</a></div>
+        <div class="simulador"><a onclick="limparSessao()" href="heroi.html">Heróis</a></div>
         <div class="bola"><a href="">⚽🏀🥊</a></div>
-        <div class="login"><a href="login.html">Login</a></div>
-        <div class="cadastro"><a href="cadastro.html">Cadastro</a></div>
+        <div class="login"><a onclick="limparSessao()" href="login.html">Login</a></div>
+        <div class="cadastro"><a onclick="limparSessao()" href="cadastro.html">Cadastro</a></div>
     </div>
     <div id="metricas"> <h3>Seja Bem-Vindo, <span id="b_usuario"></span>  <br> Quantidade de usuários cadastrados: <span id="contador"></span><br>Quantidade de logins efetuados: <span id="registros"></span></h3></div>
     <div class="img_consultoria">
         <div class="consultoria" style="text-align: center;">
-            <span id="parte1" style="display: block;"><img src="https://runnersworld.com.br/wp-content/uploads/sites/4/2018/05/shutterstock_197440790-696x462.jpg"> <br>
+            <span id="parte1" style="display: block;"><img src="https://www.blog.nadarte.com/wp-content/uploads/2020/08/post_thumbnail-8a5bda2fbdc6f9daf947372a70ecec75-1160x770.jpeg"> <br>
                 <h3 >Crie uma agenda para seus treinos!</h3> <br>
             Quantos dias vai durar seu projeto? <br>
             <input type="text" id="dias_ipt" placeholder="Ex: 30"> <br> <br>
@@ -29,8 +29,17 @@
             <input type="text" id="tempo_ipt" placeholder="Ex: 3"> <br> <br> <button onclick="treinar()">Veja sua agenda</button> <br>
         </span>
             <div id="calendario"></div>
-            <div id="parte3" style="display: none;">
-                 
+            <div id="parte3" style="display: none; text-align: center;">
+                 <h3>Calcule seu IMC (Índice de Massa Corporal):</h3> <br>
+                 IMC é a sigla para Índice de Massa Corpórea, parâmetro <br> adotado pela Organização Mundial de Saúde para <br> calcular o peso ideal de cada pessoa. <br><br>
+
+O índice é calculado da seguinte maneira: divide-se o peso do paciente pela sua altura elevada ao quadrado. <br><br>
+                 Insira seu peso(Kg) aqui:<br>
+                 <input type="text" id="peso_ipt" placeholder="Ex: 70"> <br><br>
+                 Insira sua altura(Cm) aqui: <br>
+                 <input type="text" id="altura_ipt" placeholder="Ex: 175"> <br><br>
+                 <button onclick="calcular()">Calcule aqui</button> <button onclick="voltar()">Voltar</button> <br><br>
+                 <span id="resultado"></span>
             </div>
         </div>
     </div>
@@ -44,14 +53,15 @@
 </body>
 </html>
 <script>
-    fetch("/usuarios/listar")
-        .then(res => res.json())
-                .then(res => {contador.innerHTML = res[0].usuario})
-
-    fetch("/usuarios/listar")
-        .then(res => res.json())
-                .then(res => {registros.innerHTML = res[0].registros})
-
+    function carregar() {
+        fetch("/usuarios/listar")
+            .then(res => res.json())
+                    .then(res => {contador.innerHTML = res[0].usuario})
+    
+        fetch("/usuarios/listar")
+            .then(res => res.json())
+                    .then(res => {registros.innerHTML = res[0].registros})
+    }
     function treinar() {
         let dias = dias_ipt.value;
         let tempo = tempo_ipt.value;
@@ -60,11 +70,11 @@
 
         if (dias == '' || tempo == '') {
             alert('Preencha todos os campos!')
-        } else if (dias < 7 || dias > 56) {
+        } else if (dias < 7 || dias > 56 || isNaN(dias)) {
             alert('Seu projeto deve estar em 1 e 8 semanas (7 até 56 dias)!')
         } else if (tempo <= 0 || isNaN(tempo)) {
             alert('Tempo não existente')
-        } else if (tempo > 7) {
+        } else if (tempo > 8) {
             alert('Insira um tempo menor!')
         } else{
         calendario.innerHTML += '<h3>Já que você chegou até aqui, que tal calcular<br> seu índice de massa corporal?</h3><br>';
@@ -92,7 +102,32 @@
         location.reload()
     }
     function imc() {
-        parte2.style.display = 'none'
+        calendario.style.display = 'none'
         parte3.style.display = 'block'
+    }
+    function calcular() {
+        let peso = peso_ipt.value;
+        let altura = altura_ipt.value / 100;
+        let imc = (peso / (altura * altura)).toFixed(1);
+
+        if (peso < 0 || peso == '' || isNaN(peso)) {
+            alert('Insira um peso válido!')
+        } else if (altura < 0 || altura == '' || isNaN(altura)) {
+            alert('Insira uma altura válida!')
+        } else {
+            if (imc < 18.5) {
+                resultado.innerHTML = `<span style="color: yellow;">Cuidado! Seu IMC é de ${imc}, estado de magreza.</span>`
+            } else if (imc < 24.9) {
+                resultado.innerHTML = `<span style="color: rgb(0, 255, 0);">Parabéns! Seu IMC é de ${imc}, estado normal.</span>`
+            } else if (imc < 29.9) {
+                resultado.innerHTML = `<span style="color: yellow;">Cuidado! Seu IMC é de ${imc} <br>estado de sobrepeso.</span>`
+            } else if (imc < 34.9) {
+                resultado.innerHTML = `<span style="color: orange;">Alerta! Seu IMC é de ${imc} <br>estado de Obesidade grau I.</span>`
+            } else if (imc < 39.9) {
+                resultado.innerHTML = `<span style="color: orangered;">Procure um médico! Seu IMC é de ${imc} <br>estado de Obesidade grau II.</span>`
+            } else {
+                resultado.innerHTML = `<span style="color: red;">URGENTE! Seu IMC é de ${imc} <br>estado de Obesidade grau III.</span>`
+            }
+        }
     }
 </script>
