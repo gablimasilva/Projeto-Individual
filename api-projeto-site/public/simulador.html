@@ -26,7 +26,8 @@
             Quantos dias vai durar seu projeto? <br>
             <input type="text" id="dias_ipt" placeholder="Ex: 30"> <br> <br>
             Quantos tempo até o próximo treino? <br>
-            <input type="text" id="tempo_ipt" placeholder="Ex: 3"> <br> <br> <button onclick="treinar()">Veja sua agenda</button> <br>
+            <input type="text" id="tempo_ipt" placeholder="Ex: 3"> <br> <br> <button onclick="treinar()">Veja sua agenda</button> 
+            <button onclick="sortear()">Sorteie</button>  <br>
         </span>
             <div id="calendario"></div>
             <div id="parte3" style="display: none; text-align: center;">
@@ -56,11 +57,16 @@ O índice é calculado da seguinte maneira: divide-se o peso do paciente pela su
     function carregar() {
         fetch("/usuarios/listar")
             .then(res => res.json())
-                    .then(res => {contador.innerHTML = res[0].usuario})
-    
-        fetch("/usuarios/listar")
+                    .then(res => {
+                        console.log(res);
+                        contador.innerHTML = res[0].usuario;
+                    })
+        fetch("/usuarios/registrar")
             .then(res => res.json())
-                    .then(res => {registros.innerHTML = res[0].registros})
+                    .then(res => {
+                        console.log(res);
+                        registros.innerHTML = res[0].registros;
+                    })
     }
     function treinar() {
         let dias = dias_ipt.value;
@@ -98,6 +104,26 @@ O índice é calculado da seguinte maneira: divide-se o peso do paciente pela su
         parte1.style.display = 'none'
         }
     }
+    function sortear() {
+        calendario.innerHTML += '<h3>Já que você chegou até aqui, que tal calcular<br> seu índice de massa corporal?</h3><br>';
+        calendario.innerHTML += '<button onclick="imc()">Calcule seu IMC aqui</button> <button onclick="voltar()">Voltar</button><br><br>';
+        calendario.innerHTML += '<h3>Agenda de treinos(Treine nos dias verdes):</h3><br>';
+        parte1.style.display = 'none';
+        for (let i = 0; i < 56; i++) {
+            let random = (Math.random() * 1 + 0).toFixed(0)
+            if (random == 0) {
+                calendario.innerHTML += `<div id="pai" style="display: flex; flex-direction: column; margin-left: 3px;margin-right: 3px; float:left;margin-top: 3px; color: black">
+                    <div id="num" style="height: 18px; width: 30px;border: solid white 1px;background-color: rgb(196, 196, 196);text-align: center">${i + 1}</div>
+                    <div id="cor" style="height: 30px; width: 30px;border: solid white 1px;background-color: rgb(0, 255, 0)"></div>
+                    </div>`
+            } else {
+                calendario.innerHTML += `<div id="pai" style="display: flex; flex-direction: column; margin-left: 3px;margin-right: 3px; float: left; margin-top: 3px;color: black"">
+                        <div id="num" style="height: 18px; width: 30px;border: solid white 1px;background-color: rgb(196, 196, 196);text-align: center">${i + 1}</div>
+                        <div id="cor" style="height: 30px; width: 30px;border: solid white 1px;background-color: red"></div>
+                        </div>` 
+                    }
+            }
+        }
     function voltar() {
         location.reload()
     }

@@ -3,11 +3,13 @@ var database = require("../database/config")
 function listar() {
     console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function listar()");
     var instrucao = `SELECT count(usuarios.email) as usuario FROM usuarios;`;
-    var inserir = `SELECT count(idRegistro) as registros FROM registro;`;
     console.log("Executando a instrução SQL: \n"+instrucao);
-    return database.executar(instrucao,inserir);
+    return database.executar(instrucao);
 }
-
+function registrar() {
+    var instrucao = `SELECT count(idRegistro) as registros FROM registro;`;
+    return database.executar(instrucao);
+}
 function entrar(email, senha) {
     console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function entrar(): ", email, senha)
     var instrucao = `
@@ -20,15 +22,14 @@ function entrar(email, senha) {
 function cadastrar(email, nome, esporte, senha) {
     console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function cadastrar():", email, nome, esporte, senha);
     var instrucao = `
-        INSERT INTO usuarios (nome, email, esporte, senha) VALUES ('${email}', '${nome}', '${esporte}', '${senha}');
-    `;
-    var inserir = `SELECT count(idRegistro) as registros FROM registro;`;
+        INSERT INTO usuarios (nome, email, esporte, senha) VALUES ('${email}', '${nome}', '${esporte}', '${senha}');`;
     console.log("Executando a instrução SQL: \n"+instrucao);
-    return database.executar(instrucao, inserir);
+    return database.executar(instrucao);
 }
 
 module.exports = {
     entrar,
     cadastrar,
     listar,
+    registrar
 };

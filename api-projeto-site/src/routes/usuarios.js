@@ -11,6 +11,10 @@ router.get("/listar", function(req, res) {
     usuarioController.listar(req, res);
 });
 
+router.get("/registrar", function(req, res) {
+    usuarioController.registrar(req, res);
+});
+
 router.post("/cadastrar", function(req, res) {
     usuarioController.cadastrar(req, res);
 })
@@ -18,5 +22,9 @@ router.post("/cadastrar", function(req, res) {
 router.post("/autenticar", function(req, res) {
     usuarioController.entrar(req, res);
 });
-  
+
+router.post("/autenticar2", function(req, res) {
+    usuarioController.entrar2(req, res);
+});
+
 module.exports = router;

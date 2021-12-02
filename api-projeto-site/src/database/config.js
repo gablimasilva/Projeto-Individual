@@ -54,6 +54,7 @@ function executar(instrucao, inserir) {
                 console.log(resultados);
                 resolve(resultados);    
             });
+            if (inserir != undefined) {
             var conexao2 = mysql.createConnection(mySqlConfig);
             conexao2.connect();
             conexao2.query(inserir, function(erro, resultados) {
@@ -63,7 +64,8 @@ function executar(instrucao, inserir) {
                 }                    
                 console.log(resultados);
                 resolve(resultados);    
-            });
+            }); 
+            }
             
             conexao.on('error', function (erro) {
                 return ("ERRO NO MySQL WORKBENCH (Local): ", erro.sqlMessage);
